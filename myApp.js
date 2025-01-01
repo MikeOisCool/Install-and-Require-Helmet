@@ -3,7 +3,7 @@ const app = express();
 const helmet = require('helmet');
 const bcrypt = require('bcrypt');
 
-
+console.log(bcrypt);
 // Entferne den "X-Powered-By"-Header
 app.use(helmet.hidePoweredBy());
 
