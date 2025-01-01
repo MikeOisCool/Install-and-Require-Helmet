@@ -30,9 +30,8 @@ app.use(helmet.hsts({
 // Verhindert DNS Prefetching, um die Privatsphäre zu schützen
 app.use(helmet.dnsPrefetchControl({ allow: false }));
 
-app.get('/', (req, res) => {
-  res.send('DNS Prefetching ist deaktiviert!');
-});
+// Caching deaktivieren
+app.use(helmet.noCache());
 
 
 
