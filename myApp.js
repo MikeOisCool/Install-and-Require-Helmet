@@ -15,6 +15,9 @@ app.use(helmet.xssFilter());
 // Aktiviert den X-Content-Type-Options-Header mit dem Wert "nosniff"
 app.use(helmet.noSniff());
 
+// Aktiviert den X-Download-Options-Header mit dem Wert "noopen"
+app.use(helmet.ieNoOpen());
+
 
 
 
