@@ -27,7 +27,12 @@ app.use(helmet.hsts({
   force: true                   // Erzwinge die Verwendung von HTTPS
 }));
 
+// Verhindert DNS Prefetching, um die Privatsphäre zu schützen
+app.use(helmet.dnsPrefetchControl({ allow: false }));
 
+app.get('/', (req, res) => {
+  res.send('DNS Prefetching ist deaktiviert!');
+});
 
 
 
