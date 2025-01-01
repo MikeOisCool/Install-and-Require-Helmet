@@ -33,6 +33,16 @@ app.use(helmet.dnsPrefetchControl({ allow: false }));
 // Caching deaktivieren
 app.use(helmet.noCache());
 
+// Content Security Policy konfigurieren
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"], // Nur die eigene Domain wird standardmäßig erlaubt
+      scriptSrc: ["'self'", "trusted-cdn.com"], // Skripte nur von der eigenen Domain und 'trusted-cdn.com'
+    },
+  })
+);
+
 
 
 
