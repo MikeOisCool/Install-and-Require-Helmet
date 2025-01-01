@@ -18,7 +18,14 @@ app.use(helmet.noSniff());
 // Aktiviert den X-Download-Options-Header mit dem Wert "noopen"
 app.use(helmet.ieNoOpen());
 
+// Definiere die Anzahl der Sekunden für 90 Tage
+const timeInSeconds = 90 * 24 * 60 * 60;
 
+// Verwende Helmet, um HSTS zu aktivieren
+app.use(helmet.hsts({
+  maxAge: timeInSeconds,  // Setze max-age auf 90 Tage
+  force: true                   // Erzwinge die Verwendung von HTTPS
+}));
 
 
 
