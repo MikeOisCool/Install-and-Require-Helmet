@@ -6,6 +6,9 @@ const helmet = require('helmet');
 // Entferne den "X-Powered-By"-Header
 app.use(helmet.hidePoweredBy());
 
+// Setze helmet.frameguard(), um Clickjacking zu verhindern
+app.use(helmet.frameguard({ action: 'deny' }));
+
 
 
 
