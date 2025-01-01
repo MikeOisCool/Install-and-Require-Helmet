@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const helmet = require('helmet');
+const bcrypt = require('bcrypt');
 
 
 // Entferne den "X-Powered-By"-Header
