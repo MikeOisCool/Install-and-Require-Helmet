@@ -9,7 +9,8 @@ app.use(helmet.hidePoweredBy());
 // Setze helmet.frameguard(), um Clickjacking zu verhindern
 app.use(helmet.frameguard({ action: 'deny' }));
 
-
+// Helmet xssFilter Middleware aktivieren
+app.use(helmet.xssFilter());
 
 
 
