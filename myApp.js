@@ -12,6 +12,9 @@ app.use(helmet.frameguard({ action: 'deny' }));
 // Helmet xssFilter Middleware aktivieren
 app.use(helmet.xssFilter());
 
+// Aktiviert den X-Content-Type-Options-Header mit dem Wert "nosniff"
+app.use(helmet.noSniff());
+
 
 
 
